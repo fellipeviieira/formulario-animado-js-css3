@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-color: #003469;
+  /* #003469 ##0034a5*/
+  font-family: Roboto, Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  color: white;
+}
+
+h2{
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: center;
+  color: white;
+}
+
+form {
+  width: 300px;
+  margin: 60px 0;
+  background-color: white;
+  padding: 40px 25px;
+  border-radius: 5px;
+}
+
+form .input-block {
+  margin-bottom: 20px;
+}
+
+form .input-block label {
+  font-size: 14px;
+  color: rgb(32, 20, 114);
+}
+
+form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: #003469;
+  border-radius: 2px;
+  border: 1px solid #ccddef;
+  outline-color: #003469;
+}
+
+form .btn-enviar {
+  display: block;
+  min-width: 120px;
+  border: none;
+  background-color: #003469;
+  color: white;
+  border-radius: 25px;
+  margin: auto;
+  padding: 7px;
+}
+
+/* Efeitos do Formulário ao Aparecer */
+
+form {
+  overflow: hidden;
+  animation-name: fade;
+  animation-duration: 0.2s;
+}
+
+form .input-block:nth-child(1) {
+  animation-name: move;
+  animation-duration: 200ms;
+  animation-delay: 70ms;
+}
+
+form .input-block:nth-child(2) {
+  animation-name: move;
+  animation-duration: 300ms;
+  animation-delay: 100ms;
+}
+
+form .input-block:nth-child(3) {
+  animation-name: move;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+}
+
+form .input-block:nth-child(4) {
+  animation-name: move;
+  animation-duration: 500ms;
+  animation-delay: 200ms;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%)
+  }
+}
+
+/* Pós Clique No Botão Enviar */
+
+.form-hide{
+  animation-name: down;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes down {
+  from{
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Negação de envio */
+
+form.validate-error {
+  animation: error 250ms linear, fade paused;
+  /* animation-play-state: fade paused; */
+  animation-iteration-count: 2;
+}
+
+@keyframes error {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  35%{
+    transform: translateX(-15%);
+  }
+  70%{
+    transform: translateX(15%);
+  }
+}
+
+/* Fundos */
+body {
+  overflow: hidden;
+}
+
+.squares li {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255, 0.15);
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  animation: up 2s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes up {
+  from{
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1200px);
+  }
+}

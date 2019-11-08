@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TheGeekCalendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form-section">
+      <h1>The Geek Calendar</h1>
+      <h2>O calendário oficial de eventos do universo geek!</h2>
+
+      <div class="form-wrapper">
+        <form action="">
+          <div class="input-block">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" placeholder="thegeekcalendar@gmail.com"/>
+          </div>
+          <div class="input-block">
+            <label for="login-evento">Nome do Evento:</label>
+            <input type="text" id="login-evento" placeholder="Animefriends"/>
+          </div>
+          <div class="input-block">
+            <label for="login-local">Local do Evento (Estado):</label>
+            <input type="text" id="login-local" placeholder="São Paulo"/>
+          </div>
+          <div class="input-block">
+            <label for="login-url">Url do Evento:</label>
+            <input type="url" id="login-url" placeholder="Website, Instagram, Facebook ..."/>
+          </div>
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <ul class="squares"></ul>
+
+    <script src="script.js"></script>
+  </body>
+</html>
